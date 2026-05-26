@@ -1,0 +1,6 @@
+interface:
+  display_name: "PM Learning OS"
+  short_description: "Project control layer for AI PM learning"
+  default_prompt: "Use $pm-learning-os to plan my next AI PM learning step from this project context."
+policy:
+  allow_implicit_invocation: true
