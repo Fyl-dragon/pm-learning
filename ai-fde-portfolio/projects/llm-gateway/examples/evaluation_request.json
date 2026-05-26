@@ -1,0 +1,42 @@
+{
+  "app_id": "app-sales-copilot",
+  "cases": [
+    {
+      "id": "case-solution-001",
+      "prompt": "客户要做汽车售后知识库，关注维修手册检索、权限隔离和故障升级。",
+      "route_strategy": "balanced",
+      "prompt_version_id": "prompt-solution-v1",
+      "variables": {
+        "industry": "汽车售后",
+        "scenario": "维修知识库"
+      },
+      "expected_keywords": ["业务目标", "技术链路"],
+      "expected_provider": "aliyun",
+      "tags": ["solution", "cost", "trace"]
+    },
+    {
+      "id": "case-fallback-001",
+      "prompt": "FORCE_FAIL:deepseek-chat 客户要求高可用和低成本，失败时要自动降级。",
+      "route_strategy": "default",
+      "prompt_version_id": "prompt-solution-v1",
+      "variables": {
+        "industry": "政企",
+        "scenario": "AI 办公助手"
+      },
+      "max_retries": 2,
+      "expected_keywords": ["成本"],
+      "expected_model_id": "qwen-plus",
+      "tags": ["fallback", "availability"]
+    },
+    {
+      "id": "case-prompt-failure-001",
+      "prompt": "这个 case 用来验证 harness 能识别 Prompt 环境问题。",
+      "prompt_version_id": "prompt-solution-v1",
+      "variables": {
+        "industry": "制造业"
+      },
+      "expected_failure_tag": "prompt_failure",
+      "tags": ["negative", "prompt-regression"]
+    }
+  ]
+}

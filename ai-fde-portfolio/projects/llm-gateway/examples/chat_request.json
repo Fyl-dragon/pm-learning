@@ -1,0 +1,12 @@
+{
+  "app_id": "app-sales-copilot",
+  "prompt": "客户希望把已有客服知识库接入大模型，要求降低人工响应时间并控制单次调用成本。",
+  "route_strategy": "balanced",
+  "prompt_version_id": "prompt-solution-v1",
+  "variables": {
+    "industry": "企业服务",
+    "scenario": "客服知识库"
+  },
+  "max_retries": 2
+}
+

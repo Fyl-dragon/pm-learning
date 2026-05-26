@@ -1,0 +1,49 @@
+{
+  "models": [
+    {
+      "id": "gpt-4o-mini",
+      "provider": "openai",
+      "provider_model": "gpt-4o-mini",
+      "input_price_per_1k": 0.00015,
+      "output_price_per_1k": 0.0006,
+      "avg_latency_ms": 900,
+      "health": "healthy",
+      "priority": 20,
+      "enabled": true
+    },
+    {
+      "id": "deepseek-chat",
+      "provider": "deepseek",
+      "provider_model": "deepseek-chat",
+      "input_price_per_1k": 0.00014,
+      "output_price_per_1k": 0.00028,
+      "avg_latency_ms": 1200,
+      "health": "healthy",
+      "priority": 10,
+      "enabled": true
+    },
+    {
+      "id": "qwen-plus",
+      "provider": "aliyun",
+      "provider_model": "qwen-plus",
+      "input_price_per_1k": 0.0004,
+      "output_price_per_1k": 0.0012,
+      "avg_latency_ms": 750,
+      "health": "healthy",
+      "priority": 30,
+      "enabled": true
+    },
+    {
+      "id": "claude-3-5-sonnet",
+      "provider": "anthropic",
+      "provider_model": "claude-3-5-sonnet-20241022",
+      "input_price_per_1k": 0.003,
+      "output_price_per_1k": 0.015,
+      "avg_latency_ms": 1400,
+      "health": "warning",
+      "priority": 40,
+      "enabled": true
+    }
+  ]
+}
+

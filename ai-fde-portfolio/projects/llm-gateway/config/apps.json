@@ -1,0 +1,38 @@
+{
+  "apps": [
+    {
+      "id": "app-sales-copilot",
+      "name": "AI 解决方案助手",
+      "owner": "FDE Team",
+      "monthly_budget_usd": 30.0,
+      "qps_limit": 10,
+      "default_model": "deepseek-chat",
+      "downgrade_model": "gpt-4o-mini",
+      "fallback_models": ["qwen-plus", "gpt-4o-mini"],
+      "enabled": true
+    },
+    {
+      "id": "app-rag-quality",
+      "name": "RAG 质量评测平台",
+      "owner": "AI Product Team",
+      "monthly_budget_usd": 20.0,
+      "qps_limit": 8,
+      "default_model": "qwen-plus",
+      "downgrade_model": "deepseek-chat",
+      "fallback_models": ["deepseek-chat", "gpt-4o-mini"],
+      "enabled": true
+    },
+    {
+      "id": "app-manufacturing-agent",
+      "name": "制造业售后诊断 Agent",
+      "owner": "Industry Solution Team",
+      "monthly_budget_usd": 15.0,
+      "qps_limit": 5,
+      "default_model": "qwen-plus",
+      "downgrade_model": "deepseek-chat",
+      "fallback_models": ["deepseek-chat", "gpt-4o-mini"],
+      "enabled": true
+    }
+  ]
+}
+
