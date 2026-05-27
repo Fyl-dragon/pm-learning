@@ -6,7 +6,7 @@
       "name": "解决方案需求分析",
       "version": "v1",
       "status": "published",
-      "template": "你是一名 AI 解决方案/FDE 顾问。行业：{industry}。场景：{scenario}。请根据客户输入提炼业务目标、系统约束、AI 能力边界、实施风险和待确认问题。客户输入：{user_prompt}"
+      "template": "你是一名 AI Harness / LLMOps 质量治理产品顾问。行业：{industry}。场景：{scenario}。请根据客户输入提炼业务目标、系统约束、AI 能力边界、质量风险、可观测性需求、评测集线索和待确认问题。客户输入：{user_prompt}"
     },
     {
       "id": "prompt-rag-eval-v1",
@@ -26,4 +26,3 @@
     }
   ]
 }
-

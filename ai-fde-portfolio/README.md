@@ -1,15 +1,17 @@
-# AI/FDE Career Portfolio
+# AI Harness / LLMOps Career Portfolio
 
-这是你的 6 个月 AI/FDE 转型工作区，定位不是“学习笔记”，而是能逐步变成简历、作品集、面试表达和 Demo 的材料库。
+这是你的 6 个月 AI Harness / AI Evals / LLMOps 质量治理转型工作区，定位不是“学习笔记”，而是能逐步变成简历、作品集、面试表达和 Demo 的材料库。
 
 它服务于整个 `pm-learning` 项目的核心目标：把产品学习资料、成长路线、阶段成果和学习效果评测都沉淀下来，最终提升你作为 AI 产品经理的职场竞争力。
+
+当前主线：AI 平台产品经理 / AI Evals & Harness 产品方向。FDE 只作为客户现场、交付、集成、需求抽象经验标签保留，不作为主攻岗位 title。
 
 ## 目录
 
 - `projects/llm-gateway/`：第 1 个主项目，大模型调用治理平台 + Eval Harness V0。
 - `docs/projects/`：项目复盘、方案文档和后续项目设计。
-- `career/`：简历、岗位分析、面试讲稿。
-- `plan/`：6 个月路线、本月计划、本周任务。
+- `career/`：简历、岗位分析、职业方向判断、面试讲稿。
+- `plan/`：6 个月路线、本月计划、本周任务、学习资料优先级。
 
 ## 当前已完成
 
@@ -22,8 +24,9 @@
 
 1. 周一早上更新 `career/jd-analysis.md`。
 2. 工作日早上推进 `projects/llm-gateway/` 或下一个项目。
-3. 晚上只更新 `career/resume-v1.md`、`career/interview-scripts.md`。
-4. 周日上午更新 `plan/week-01.md` 的复盘区。
+3. 学习资料先按 `plan/learning-resources-priority.md` 的 P0/P1 顺序选，避免被英文平台和大而全仓库带偏。
+4. 晚上只更新 `career/resume-v1.md`、`career/interview-scripts.md`。
+5. 周日上午更新 `plan/week-01.md` 的复盘区。
 
 ## 本周最重要的验收
 
@@ -31,3 +34,5 @@
 - 能用 5 分钟讲清楚它和普通 API 中转的区别。
 - 能解释 harness 和普通测试脚本的区别。
 - 简历里能写出 3-5 条平台产品经历，而不是“负责需求分析”。
+- 能讲清楚为什么主攻 Harness/Evals，而不是泛 FDE/驻场实施。
+- 能说明当前学习资料的优先级、具体章节、语言门槛和产出物。

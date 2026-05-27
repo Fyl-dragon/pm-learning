@@ -2,8 +2,8 @@
   "apps": [
     {
       "id": "app-sales-copilot",
-      "name": "AI 解决方案助手",
-      "owner": "FDE Team",
+      "name": "AI 需求与质量治理助手",
+      "owner": "AI Harness Team",
       "monthly_budget_usd": 30.0,
       "qps_limit": 10,
       "default_model": "deepseek-chat",
@@ -35,4 +35,3 @@
     }
   ]
 }
-

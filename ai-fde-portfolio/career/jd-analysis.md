@@ -4,7 +4,7 @@
 
 | 日期 | 城市 | 公司/岗位 | 薪资 | 岗位方向 | 高频要求 | 我已具备 | 需要补 | 是否投递 | 备注 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 2026-05-25 | 重庆 | AI 解决方案/FDE | 13K-15K | 解决方案 | RAG、Agent、客户沟通、交付 | 大模型平台、现场对接、产品经验 | 作品集、RAG 评测项目 | 待定 | 样例行，替换成真实岗位 |
+| 2026-05-25 | 重庆 | AI Evals / Harness / 大模型平台产品 | 12K-15K | AI 平台质量治理 | Eval Harness、RAG Evaluation、Agent trace、LLMOps、成本/稳定性治理 | 大模型平台、开发经验、现场交付、产品经验 | Harness 产品化作品集、RAG/Agent 评测项目 | 待定 | 样例行，替换成真实岗位 |
 
 ## 高频能力归纳
 
@@ -13,7 +13,7 @@
 - Python/FastAPI 或 Java/Spring Boot 集成能力
 - 大模型 API、Token、计费、错误处理
 - RAG、Agent、工作流、工具调用
-- Eval Harness、Agent Harness、trace、回归测试、失败归因
+- Eval Harness、RAG Evaluation Harness、Agent Harness、trace、回归测试、CI gate、失败归因
 - 日志、监控、评测、成本控制
 
 产品/方案：
@@ -23,6 +23,7 @@
 - 指标拆解
 - 交付风险管理
 - 业务价值表达
+- 评测集管理、Bad Case 管理、生产 trace 回流、发布门禁、人工标注流程
 
 行业：
 
@@ -31,3 +32,33 @@
 - 政企数字化
 - 企业服务
 - 教育/医疗可作为备选
+
+## 搜索关键词
+
+主攻：
+
+- AI Evals
+- AI Evaluation
+- Eval Harness
+- LLMOps
+- AI observability
+- RAG evaluation
+- Agent platform
+- Agent trace
+- 大模型平台产品
+- 模型评测 / 模型质量治理
+
+谨慎筛选：
+
+- FDE
+- AI 解决方案
+- AI 交付
+- 驻场 AI 工程师
+
+直接排除：
+
+- 纯驻场实施
+- 客户成功
+- 交付经理
+- 售前支持
+- 只写“懂大模型优先”但没有平台、评测、trace、治理能力的岗位

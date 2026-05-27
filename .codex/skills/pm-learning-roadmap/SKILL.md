@@ -1,6 +1,6 @@
 ---
 name: pm-learning-roadmap
-description: Project-local skill for AI product manager learning roadmap and course/resource recommendations in the pm-learning repository. Use when Codex needs to create or adjust monthly/weekly AI PM study plans, recommend courses or learning materials, map skill gaps to outputs, design study tasks for LLM platforms, RAG evaluation, Agent Harness, AI solution/FDE work, or improve learning route quality with evidence constraints.
+description: Project-local skill for AI product manager learning roadmap and course/resource recommendations in the pm-learning repository. Use when Codex needs to create or adjust monthly/weekly AI PM study plans, recommend courses or learning materials, map skill gaps to outputs, design study tasks for LLM platforms, AI Evals, Eval Harness, RAG evaluation, Agent Harness, LLMOps quality governance, or improve learning route quality with evidence constraints.
 ---
 
 # PM Learning Roadmap
@@ -16,6 +16,7 @@ Before planning, read the relevant project files:
 - `.planning/PROJECT.md`
 - `README.md`
 - `ai-fde-portfolio/plan/6-month-roadmap.md`
+- `ai-fde-portfolio/plan/learning-resources-priority.md`
 - `ai-fde-portfolio/plan/month-01.md`
 - `ai-fde-portfolio/plan/week-01.md`
 - `ai-fde-portfolio/career/jd-analysis.md`
@@ -25,7 +26,7 @@ For project-specific technical learning, also inspect `ai-fde-portfolio/projects
 
 ## Planning Workflow
 
-1. Identify the target role direction: AI PM, AI solution, FDE, LLM platform PM, or industry AI PM.
+1. Identify the target role direction: AI Evals / Harness, LLMOps, LLM platform PM, RAG/Agent platform PM, or industry AI PM.
 2. Extract current route, current week, completed outputs, and gaps from project files.
 3. Convert gaps into tasks with ability target, concrete output, time box, and acceptance check.
 4. Recommend resources only when they directly support the next output.
@@ -38,9 +39,10 @@ Use `references/course-recommendation-rules.md` before recommending courses or r
 Default strategy:
 
 - Prefer Chinese, executable, low-cost resources first.
+- Respect the P0/P1/P2/P3/P4 priority list in `ai-fde-portfolio/plan/learning-resources-priority.md`.
 - Add English official/high-quality resources when Chinese options are weak or outdated.
 - Recommend fewer resources with a clear use case; do not produce generic course dumps.
-- Every resource must include name, link, source date, cost/time estimate, why it fits, and an alternative.
+- Every resource must include name, link, source date, cost/time estimate, language barrier, concrete chapter/scope, why it fits, expected output, and an alternative.
 
 ## Output Requirements
 
@@ -60,6 +62,7 @@ Use `assets/templates/learning-plan.md` for monthly or weekly plans.
 - Do not replace the existing 6-month route unless the user asks for a redesign.
 - Do not optimize for "learning more"; optimize for provable AI PM competitiveness.
 - Do not recommend a course unless it maps to a near-term output.
+- Do not recommend platform/product homepages as learning materials unless you also name the exact course, chapter, guide, docs page, or repository section to study.
 - Keep workload realistic for weekday morning/evening and weekend study rhythm.
 
 ## Resources

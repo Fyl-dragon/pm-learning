@@ -1,6 +1,6 @@
 # LLM Gateway / LLMOps Mini Platform
 
-这是 6 个月 AI/FDE 转型计划的第一个主项目：大模型调用治理平台。
+这是 6 个月 AI Harness / LLMOps 转型计划的第一个主项目：大模型调用治理平台。
 
 它不是普通 API 中转 Demo，核心是把平台产品面试里最常被问到的能力做出来：
 

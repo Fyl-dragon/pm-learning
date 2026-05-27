@@ -9,7 +9,7 @@
 ## 目标用户
 
 - 平台产品/运营：配置模型、应用、预算和路由策略。
-- AI 解决方案/FDE：为客户设计模型接入和降级方案。
+- AI 平台产品 / Harness 产品：设计模型接入、降级、评测和质量治理方案。
 - 研发/运维：排查调用失败、成本异常、模型耗时问题。
 - 企业客户：获得更稳定、可控、可解释的大模型服务。
 
@@ -21,6 +21,7 @@
 - 如何统计客户/应用维度的用量和成本？
 - Prompt 修改后，如何定位效果变化？
 - 如何为后续 RAG/Agent harness 留下入口？
+- 如何把生产 trace、失败 case 和客户反馈回流为评测集？
 
 ## 当前实现
 
@@ -35,6 +36,7 @@
 - 预算控制：达到月度预算后降级或拦截
 - QPS 限制：按应用统计近期调用
 - Eval Harness：批量运行 case、输出通过率、成本、耗时、fallback 次数、trace 和失败归因
+- 质量治理入口：为 RAG Evaluation Harness、Agent Harness、发布门禁和生产反馈回流预留结构
 
 ## 架构草图
 
@@ -62,6 +64,7 @@ flowchart LR
 - 客户用量核算
 - Prompt 变更追踪
 - Eval Harness：测试集、批量运行、trace、失败归因
+- 生产反馈回流：把 bad case、trace、成本和延迟问题转成后续评测集
 
 ## 后续增强
 
@@ -71,4 +74,5 @@ flowchart LR
 - 增加租户权限。
 - 增加 Web 管理台。
 - 将 Eval Harness 升级为 RAG Evaluation Harness。
-- 在 Agent/FDE 助手中加入 Agent Harness：Tool registry、State、Guardrails、Trace、Recovery。
+- 加入 Agent Harness：Tool registry、State、Guardrails、Trace、Recovery、Regression。
+- 做 Harness 产品化后台：评测集管理、运行记录、对比实验、人工标注、生产 trace 回流和发布门禁。
