@@ -52,6 +52,7 @@ LLM Gateway / LLMOps Mini Platform 已经具备作品集雏形：
 - 已新增 `career/market-snapshot-2026-05-28-ai-pm-jd.md`，把样本要求映射到学习路线、作品集和简历包装。
 - 已补充 LLM Gateway 的 baseline、rubric、regression、CI gate 表达，并新增 3/8/15 分钟项目讲法。
 - 已新增 `docs/projects/05-ai-builder-retrospective-v1.md`，作为 AI Builder 复盘 V1。
+- 已新增 `career/portfolio-evidence-matrix.md`，把目标能力、市场证据、项目资产、简历/面试用法和证据缺口串起来。
 - 样本仍然有限，后续需要每周继续补 5 个真实 JD。
 
 ## 下周前三件事

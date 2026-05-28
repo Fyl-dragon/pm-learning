@@ -17,6 +17,7 @@ Before packaging, inspect:
 - `ai-fde-portfolio/career/resume-v1.md`
 - `ai-fde-portfolio/career/interview-scripts.md`
 - `ai-fde-portfolio/career/jd-analysis.md`
+- `ai-fde-portfolio/career/portfolio-evidence-matrix.md`
 - Relevant project docs under `ai-fde-portfolio/docs/projects/`
 - Relevant project implementation under `ai-fde-portfolio/projects/`
 
