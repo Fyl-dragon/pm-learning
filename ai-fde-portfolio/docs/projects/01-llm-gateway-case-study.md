@@ -78,6 +78,10 @@ V0 已能输出：
 - `review`：质量通过，但成本、延迟或 fallback 超阈值，需要产品和工程复核。
 - `block`：通过率或关键失败标签不达标，不允许发布。
 
+已补充 before/after 报告：
+
+- `06-llm-gateway-eval-gate-report.md`：展示基线样例 `allow`，以及质量回归样例 `block`。
+
 ## 成本、质量、稳定性三角权衡
 
 LLM Gateway 的产品核心不是“选择最强模型”，而是在成本、质量和稳定性之间做策略：
