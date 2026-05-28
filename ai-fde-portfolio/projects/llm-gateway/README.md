@@ -70,6 +70,25 @@ curl -X POST http://127.0.0.1:8010/v1/evaluations/run \
 - `results[].trace.attempts`
 - `results[].assertions`
 
+## Eval Harness V0 门禁概念
+
+V0 的定位不是替代完整评测平台，而是让 LLM Gateway 具备最小质量门禁：
+
+- baseline：记录一批稳定 case 的通过率、平均成本、平均耗时和 fallback 次数。
+- rubric：用关键词、工具、模型/供应商匹配和预期失败标签做可解释判断。
+- regression：当通过率下降、成本/耗时上升或失败归因集中出现时，标记为版本退化。
+- CI gate：发布 Prompt、模型或路由策略前先跑核心 case，指标在阈值内才允许上线。
+
+最小门禁表：
+
+| 指标 | 作用 |
+| --- | --- |
+| `pass_rate` | 判断核心能力是否退化 |
+| `avg_cost_usd` | 判断路由策略是否导致成本失控 |
+| `avg_latency_ms` | 判断体验是否变慢 |
+| `fallback_count` | 判断模型或供应商稳定性 |
+| `failure_breakdown` | 区分质量、路由、Prompt、策略和模型问题 |
+
 失败归因标签：
 
 - `quality_failure`：内容未满足期望关键词。
@@ -87,5 +106,5 @@ curl -X POST http://127.0.0.1:8010/v1/evaluations/run \
 2. 所以平台入口必须记录 app、model、provider、prompt version、token、cost、latency、status。
 3. 路由策略可以按成本、速度、健康状态做取舍；失败时 fallback 保证可用性。
 4. 预算和降级模型把产品商业化、客户套餐、毛利控制连起来。
-5. Eval Harness 让平台从“能跑一次”进入“可重复评测、可定位失败、可持续优化”。
+5. Eval Harness 让平台从“能跑一次”进入“有 baseline、有 rubric、有 regression、有 CI gate 的质量门禁”。
 6. AI Builder 价值不是炫技，而是能把产品需求推进到可运行原型，再用测试、eval、trace 和指标证明质量。

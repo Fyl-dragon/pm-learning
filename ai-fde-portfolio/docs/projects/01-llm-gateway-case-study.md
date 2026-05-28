@@ -41,6 +41,48 @@
 - 质量治理入口：为 RAG Evaluation Harness、Agent Harness、发布门禁和生产反馈回流预留结构
 - AI Builder 证据：保留代码、测试、配置、README 和后续 AI 辅助开发复盘
 
+## Eval Harness V0 质量门禁设计
+
+当前 Eval Harness 不是单纯跑几个测试样例，而是把“模型调用环境”作为整体来评估：
+
+- case：每个评测样例包含 prompt、route strategy、Prompt version、变量、期望关键词、期望模型/供应商、期望失败标签和 tags。
+- rubric：V0 先用可解释规则评分，包括关键词是否满足、工具是否出现、模型/供应商是否符合预期、是否触发预期失败。
+- baseline：把某一批稳定 case 的 pass rate、平均成本、平均耗时、fallback 次数作为基线，后续模型、Prompt 或路由策略变更后与基线对比。
+- regression：如果同一批 case 的通过率下降、失败归因集中到 Prompt/路由/策略，或成本/耗时明显上升，就视为版本退化。
+- CI gate：发布前批量运行核心 case，只有通过率、成本、耗时、fallback 和失败归因都在阈值内，才允许更新 Prompt、模型或路由策略。
+
+V0 已能输出：
+
+- `summary.pass_rate` / `summary.fail_rate`
+- `summary.avg_cost_usd` / `summary.avg_latency_ms`
+- `summary.fallback_count`
+- `summary.failure_breakdown`
+- `results[].trace.attempts`
+- `results[].assertions`
+
+下一步要把门禁规则显式配置化，例如：
+
+| 门禁项 | V0 判断方式 | 面向产品的解释 |
+| --- | --- | --- |
+| 通过率 | 核心 case pass rate 不低于 baseline | 防止模型/Prompt 更新后旧能力倒退 |
+| 成本 | avg_cost_usd 不高于预算阈值 | 防止路由策略让客户毛利失控 |
+| 延迟 | avg_latency_ms 不超过体验阈值 | 防止稳定但太慢的模型进入默认链路 |
+| fallback | fallback_count 不异常升高 | 发现供应商或模型健康度问题 |
+| 失败归因 | failure_breakdown 不集中爆发 | 区分质量、Prompt、路由、策略和模型问题 |
+
+## 成本、质量、稳定性三角权衡
+
+LLM Gateway 的产品核心不是“选择最强模型”，而是在成本、质量和稳定性之间做策略：
+
+| 策略 | 优先目标 | 适用场景 | 风险 | 需要观察的指标 |
+| --- | --- | --- | --- | --- |
+| low_cost | 成本 | 批量低价值任务、草稿生成、内部辅助 | 质量下降、客户体验不稳定 | pass rate、quality_failure、avg_cost_usd |
+| fastest | 速度 | 实时交互、客服助手、前台 Copilot | 可能牺牲复杂任务质量 | avg_latency_ms、timeout、fallback_count |
+| balanced | 综合体验 | 默认业务场景、售前方案、知识问答 | 策略解释成本更高 | pass rate、cost、latency、fallback |
+| fallback | 可用性 | 供应商异常、模型限流、临时故障 | 成本或效果可能波动 | fallback_count、model_failure、provider |
+
+面试表达重点：平台产品经理不是只做模型列表，而是把模型能力转成可配置、可追踪、可解释、可收费的治理能力。
+
 ## 架构草图
 
 ```mermaid
@@ -67,6 +109,7 @@ flowchart LR
 - 客户用量核算
 - Prompt 变更追踪
 - Eval Harness：测试集、批量运行、trace、失败归因
+- baseline / rubric / regression / CI gate：把评测从“看结果”升级为发布门禁
 - 生产反馈回流：把 bad case、trace、成本和延迟问题转成后续评测集
 - AI Builder：用 AI 辅助开发推进小功能和测试，但用人工产品判断、测试/eval 和复盘控制质量
 
