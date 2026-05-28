@@ -10,6 +10,7 @@
 
 - `projects/llm-gateway/`：第 1 个主项目，大模型调用治理平台 + Eval Harness V0。
 - `docs/projects/`：项目复盘、方案文档和后续项目设计。
+- `evaluations/`：学习效果评测、周复盘和下一步纠偏动作。
 - `career/`：简历、岗位分析、职业方向判断、面试讲稿。
 - `plan/`：6 个月路线、本月计划、本周任务、学习资料优先级、AI Builder 技术能力线和 rohitg00 精选学习计划。
 
@@ -28,6 +29,7 @@
 3. 学习资料先按 `plan/learning-resources-priority.md` 的 P0/P1 顺序选，AI Builder 技术任务按 `plan/ai-builder-technical-track.md` 控制边界；使用 rohitg00 仓库时必须按 `plan/ai-engineering-from-scratch-study-plan.md` 的 5 步学习法执行。
 4. 晚上只更新 `career/resume-v1.md`、`career/interview-scripts.md`。
 5. 周日上午更新 `plan/week-01.md` 的复盘区。
+6. 每周复盘后在 `evaluations/` 留下一份评分记录，避免只完成任务但没有能力证明。
 
 ## 本周最重要的验收
 
@@ -38,3 +40,4 @@
 - 能讲清楚为什么主攻 Harness/Evals，而不是泛 FDE/驻场实施。
 - 能讲清楚为什么新增 AI Builder 能力，而不是转纯 AI 全栈工程师。
 - 能说明当前学习资料的优先级、具体章节、语言门槛和产出物。
+- 能拿出一份学习效果评测，说明本周产出如何转成岗位竞争力。

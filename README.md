@@ -23,6 +23,7 @@
 - `ai-fde-portfolio/plan/ai-engineering-from-scratch-study-plan.md`：rohitg00/ai-engineering-from-scratch 精选学习协议，约束只学与 Harness / AI Builder 直接相关的部分。
 - `ai-fde-portfolio/projects/`：可展示、可复盘、可面试讲解的项目成果。
 - `ai-fde-portfolio/docs/projects/`：项目复盘、方案文档和产品化表达。
+- `ai-fde-portfolio/evaluations/`：学习效果评测、周复盘、证据检查和下周改进动作。
 - `ai-fde-portfolio/career/`：简历、岗位分析和面试讲稿。
 - `.planning/`：项目级目标、上下文和后续协作记录。
 
@@ -44,4 +45,5 @@
 - 少喊“AI 全栈”口号，多做能被测试、eval、trace 证明质量的 AI Builder 产物。
 - 少收藏泛平台入口，多使用 `ai-fde-portfolio/plan/learning-resources-priority.md` 中已排序的具体资料。
 - 每周至少留下一个能证明能力提升的产物。
+- 每周至少做一次学习效果评测，检查是否真的转成作品集、简历或面试表达。
 - 每个项目都要同时服务学习、作品集、简历和面试表达。

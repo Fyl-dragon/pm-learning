@@ -20,7 +20,7 @@
 不安装 FastAPI 也可以先跑核心 Demo：
 
 ```bash
-cd /Users/fyl/workspace/产品/ai-fde-portfolio/projects/llm-gateway
+cd /Users/fengyonglong/workspace/code/pm-learning/ai-fde-portfolio/projects/llm-gateway
 python3 -m app.cli_demo
 python3 -m unittest discover -s tests
 ```
@@ -30,7 +30,7 @@ python3 -m unittest discover -s tests
 安装依赖后启动：
 
 ```bash
-cd /Users/fyl/workspace/产品/ai-fde-portfolio/projects/llm-gateway
+cd /Users/fengyonglong/workspace/code/pm-learning/ai-fde-portfolio/projects/llm-gateway
 python3 -m pip install -r requirements.txt
 python3 -m uvicorn app.main:app --reload --port 8010
 ```

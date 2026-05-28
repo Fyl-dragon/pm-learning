@@ -121,3 +121,4 @@
 - 当前公司观察：
 - 资料学习产出：
 - AI Builder 产出：
+- 评测记录：`ai-fde-portfolio/evaluations/2026-05-28-week-01-midweek-review.md`

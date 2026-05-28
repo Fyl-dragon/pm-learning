@@ -19,6 +19,7 @@ Read the current plan and evidence before scoring:
 - `ai-fde-portfolio/plan/week-01.md`
 - `ai-fde-portfolio/career/resume-v1.md`
 - `ai-fde-portfolio/career/interview-scripts.md`
+- `ai-fde-portfolio/evaluations/`
 - Relevant project and docs folders for the artifact being evaluated.
 
 ## Evaluation Workflow
@@ -57,6 +58,7 @@ When the user asks for reminders, supervision, recurring check-ins, or follow-up
 - Link each criticism to a concrete improvement action.
 - Prefer one high-leverage adjustment over a long list of vague suggestions.
 - Always connect review output to AI PM competitiveness.
+- Save substantial weekly or midweek reviews under `ai-fde-portfolio/evaluations/` when the user asks to persist project learning evidence or when continuing the project goal.
 
 ## Resources
 
