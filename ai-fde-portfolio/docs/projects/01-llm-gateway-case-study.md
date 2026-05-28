@@ -57,10 +57,12 @@ V0 已能输出：
 - `summary.avg_cost_usd` / `summary.avg_latency_ms`
 - `summary.fallback_count`
 - `summary.failure_breakdown`
+- `gate.decision`
+- `gate.checks[]`
 - `results[].trace.attempts`
 - `results[].assertions`
 
-下一步要把门禁规则显式配置化，例如：
+当前已通过 `config/eval_policy.json` 把门禁规则配置化：
 
 | 门禁项 | V0 判断方式 | 面向产品的解释 |
 | --- | --- | --- |
@@ -69,6 +71,12 @@ V0 已能输出：
 | 延迟 | avg_latency_ms 不超过体验阈值 | 防止稳定但太慢的模型进入默认链路 |
 | fallback | fallback_count 不异常升高 | 发现供应商或模型健康度问题 |
 | 失败归因 | failure_breakdown 不集中爆发 | 区分质量、Prompt、路由、策略和模型问题 |
+
+发布判断：
+
+- `allow`：质量、成本、延迟、fallback 和失败归因都在阈值内，可以进入下一步发布。
+- `review`：质量通过，但成本、延迟或 fallback 超阈值，需要产品和工程复核。
+- `block`：通过率或关键失败标签不达标，不允许发布。
 
 ## 成本、质量、稳定性三角权衡
 
@@ -109,7 +117,7 @@ flowchart LR
 - 客户用量核算
 - Prompt 变更追踪
 - Eval Harness：测试集、批量运行、trace、失败归因
-- baseline / rubric / regression / CI gate：把评测从“看结果”升级为发布门禁
+- baseline / rubric / regression / CI gate / release decision：把评测从“看结果”升级为发布门禁
 - 生产反馈回流：把 bad case、trace、成本和延迟问题转成后续评测集
 - AI Builder：用 AI 辅助开发推进小功能和测试，但用人工产品判断、测试/eval 和复盘控制质量
 

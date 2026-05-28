@@ -70,6 +70,7 @@ class GatewayCoreTest(unittest.TestCase):
         self.assertEqual(result["summary"]["total"], 1)
         self.assertEqual(result["summary"]["passed"], 1)
         self.assertEqual(result["summary"]["pass_rate"], 1.0)
+        self.assertEqual(result["gate"]["decision"], "allow")
         self.assertIn("trace", result["results"][0])
 
     def test_eval_harness_counts_fallback_and_cost(self):
@@ -104,6 +105,7 @@ class GatewayCoreTest(unittest.TestCase):
         )
         self.assertEqual(result["summary"]["failed"], 1)
         self.assertEqual(result["summary"]["failure_breakdown"]["quality_failure"], 1)
+        self.assertEqual(result["gate"]["decision"], "block")
         self.assertEqual(result["results"][0]["failure_tag"], "quality_failure")
 
     def test_eval_harness_attributes_prompt_failure(self):

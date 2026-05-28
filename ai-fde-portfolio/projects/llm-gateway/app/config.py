@@ -70,3 +70,6 @@ def load_prompt_versions() -> Dict[str, PromptVersion]:
     rows = load_json("prompts.json")["prompt_versions"]
     return {row["id"]: PromptVersion(**row) for row in rows}
 
+
+def load_eval_policy() -> Dict[str, Any]:
+    return load_json("eval_policy.json")

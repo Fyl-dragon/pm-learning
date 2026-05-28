@@ -50,6 +50,8 @@
 
 - `python3 -m unittest discover -s tests`
 - 结果：8 个测试通过。
+- `python3 -m json.tool config/eval_policy.json`
+- 结果：评测门禁策略 JSON 格式有效。
 
 已有测试覆盖：
 
@@ -61,6 +63,7 @@
 - Eval Harness 统计 fallback 和成本。
 - Eval Harness 识别 quality_failure。
 - Eval Harness 识别 prompt_failure。
+- Eval Harness 根据 `config/eval_policy.json` 输出 `gate.decision`。
 
 ## 产品价值
 

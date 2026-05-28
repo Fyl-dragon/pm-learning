@@ -16,8 +16,9 @@ class EvalHarness:
     version, fallback behavior, cost and failure attribution.
     """
 
-    def __init__(self, run_case: RunCase) -> None:
+    def __init__(self, run_case: RunCase, policy: Optional[Dict[str, Any]] = None) -> None:
         self.run_case = run_case
+        self.policy = policy or {}
 
     def run(self, app_id: str, cases: List[Dict[str, Any]]) -> Dict[str, Any]:
         started_at = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
@@ -30,6 +31,17 @@ class EvalHarness:
         failure_breakdown = Counter(
             result["failure_tag"] for result in results if result["failure_tag"] != "none"
         )
+        summary = {
+            "total": len(results),
+            "passed": passed,
+            "failed": failed,
+            "pass_rate": round(passed / len(results), 4) if results else 0,
+            "fail_rate": round(failed / len(results), 4) if results else 0,
+            "avg_cost_usd": round(total_cost / len(results), 6) if results else 0,
+            "avg_latency_ms": round(total_latency / len(results), 2) if results else 0,
+            "fallback_count": fallback_count,
+            "failure_breakdown": dict(failure_breakdown),
+        }
         return {
             "harness": {
                 "name": "llm-gateway-eval-harness",
@@ -37,18 +49,73 @@ class EvalHarness:
                 "started_at": started_at,
                 "app_id": app_id,
             },
-            "summary": {
-                "total": len(results),
-                "passed": passed,
-                "failed": failed,
-                "pass_rate": round(passed / len(results), 4) if results else 0,
-                "fail_rate": round(failed / len(results), 4) if results else 0,
-                "avg_cost_usd": round(total_cost / len(results), 6) if results else 0,
-                "avg_latency_ms": round(total_latency / len(results), 2) if results else 0,
-                "fallback_count": fallback_count,
-                "failure_breakdown": dict(failure_breakdown),
-            },
+            "summary": summary,
+            "gate": self._gate(summary),
             "results": results,
+        }
+
+    def _gate(self, summary: Dict[str, Any]) -> Dict[str, Any]:
+        policy_id = self.policy.get("policy_id", "default-eval-policy")
+        thresholds = self.policy.get("thresholds", {})
+        checks = [
+            self._min_check("pass_rate", summary["pass_rate"], thresholds.get("min_pass_rate", 0.0)),
+            self._max_check("avg_cost_usd", summary["avg_cost_usd"], thresholds.get("max_avg_cost_usd")),
+            self._max_check("avg_latency_ms", summary["avg_latency_ms"], thresholds.get("max_avg_latency_ms")),
+            self._max_check("fallback_count", summary["fallback_count"], thresholds.get("max_fallback_count")),
+            self._blocked_failure_tag_check(
+                summary["failure_breakdown"],
+                thresholds.get("blocked_failure_tags", []),
+            ),
+        ]
+        failed = [check for check in checks if check["status"] == "fail"]
+        hard_fail_names = {"pass_rate", "blocked_failure_tags"}
+        if any(check["name"] in hard_fail_names for check in failed):
+            decision = "block"
+        elif failed:
+            decision = "review"
+        else:
+            decision = "allow"
+        return {
+            "policy_id": policy_id,
+            "decision": decision,
+            "checks": checks,
+            "baseline": self.policy.get("baseline", {}),
+        }
+
+    def _min_check(self, name: str, observed: float, threshold: float) -> Dict[str, Any]:
+        return {
+            "name": name,
+            "status": "pass" if observed >= threshold else "fail",
+            "observed": observed,
+            "threshold": threshold,
+            "operator": ">=",
+        }
+
+    def _max_check(self, name: str, observed: float, threshold: Optional[float]) -> Dict[str, Any]:
+        if threshold is None:
+            return {
+                "name": name,
+                "status": "pass",
+                "observed": observed,
+                "threshold": None,
+                "operator": "<=",
+            }
+        return {
+            "name": name,
+            "status": "pass" if observed <= threshold else "fail",
+            "observed": observed,
+            "threshold": threshold,
+            "operator": "<=",
+        }
+
+    def _blocked_failure_tag_check(self, failure_breakdown: Dict[str, int], blocked_tags: List[str]) -> Dict[str, Any]:
+        observed = {tag: failure_breakdown[tag] for tag in blocked_tags if failure_breakdown.get(tag, 0) > 0}
+        return {
+            "name": "blocked_failure_tags",
+            "status": "fail" if observed else "pass",
+            "observed": observed,
+            "threshold": blocked_tags,
+            "operator": "not_present",
         }
 
     def _run_one(self, app_id: str, case: Dict[str, Any]) -> Dict[str, Any]:
@@ -182,4 +249,3 @@ class EvalHarness:
         if isinstance(error, (KeyError, ValueError)):
             return "prompt_failure"
         return "harness_runtime_failure"
-

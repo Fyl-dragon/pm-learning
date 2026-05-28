@@ -6,7 +6,7 @@ import uuid
 from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional, Tuple
 
-from .config import AppConfig, ModelConfig, PromptVersion, load_apps, load_models, load_prompt_versions
+from .config import AppConfig, ModelConfig, PromptVersion, load_apps, load_eval_policy, load_models, load_prompt_versions
 from .database import GatewayDatabase
 from .eval_harness import EvalHarness
 
@@ -62,12 +62,14 @@ class GatewayService:
         models: Optional[Dict[str, ModelConfig]] = None,
         apps: Optional[Dict[str, AppConfig]] = None,
         prompts: Optional[Dict[str, PromptVersion]] = None,
+        eval_policy: Optional[Dict[str, Any]] = None,
         provider: Optional[MockProvider] = None,
     ) -> None:
         self.db = db
         self.models = models or load_models()
         self.apps = apps or load_apps()
         self.prompts = prompts or load_prompt_versions()
+        self.eval_policy = eval_policy or load_eval_policy()
         self.provider = provider or MockProvider()
 
     def chat(self, request: GatewayRequest) -> Dict[str, Any]:
@@ -193,7 +195,8 @@ class GatewayService:
                     variables=case.get("variables", {}),
                     max_retries=case.get("max_retries", 1),
                 )
-            )
+            ),
+            policy=self.eval_policy,
         )
         return harness.run(app_id, cases)
 

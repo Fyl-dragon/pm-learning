@@ -53,6 +53,7 @@ LLM Gateway / LLMOps Mini Platform 已经具备作品集雏形：
 - 已补充 LLM Gateway 的 baseline、rubric、regression、CI gate 表达，并新增 3/8/15 分钟项目讲法。
 - 已新增 `docs/projects/05-ai-builder-retrospective-v1.md`，作为 AI Builder 复盘 V1。
 - 已新增 `career/portfolio-evidence-matrix.md`，把目标能力、市场证据、项目资产、简历/面试用法和证据缺口串起来。
+- 已新增 `projects/llm-gateway/config/eval_policy.json` 并接入 Eval Harness 输出，支持 `gate.decision` 的 `allow` / `review` / `block` 判断。
 - 样本仍然有限，后续需要每周继续补 5 个真实 JD。
 
 ## 下周前三件事

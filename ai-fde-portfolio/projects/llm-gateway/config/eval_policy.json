@@ -1,0 +1,27 @@
+{
+  "policy_id": "llm-gateway-release-gate-v0",
+  "description": "Minimum release gate for LLM Gateway eval runs. It is intentionally simple and explainable for product review.",
+  "baseline": {
+    "pass_rate": 1.0,
+    "avg_cost_usd": 0.0005,
+    "avg_latency_ms": 900,
+    "fallback_count": 1
+  },
+  "thresholds": {
+    "min_pass_rate": 0.95,
+    "max_avg_cost_usd": 0.001,
+    "max_avg_latency_ms": 1200,
+    "max_fallback_count": 1,
+    "blocked_failure_tags": [
+      "prompt_failure",
+      "routing_failure",
+      "policy_failure",
+      "harness_runtime_failure"
+    ]
+  },
+  "release_decisions": {
+    "allow": "All hard and soft gates pass. The prompt, model, or route change can proceed.",
+    "review": "Quality passed but cost, latency, or fallback is outside threshold. Product and engineering review is required.",
+    "block": "Quality or blocked failure tags failed. Do not release before fixing the regression."
+  }
+}
