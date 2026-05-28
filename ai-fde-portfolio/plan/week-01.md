@@ -41,6 +41,7 @@
 
 - 记录应用、模型、provider、耗时、状态、token、费用。
 - 增加批量评测返回结构：summary、results、trace。
+- 对照 rohitg00 Phase 11 `10-evaluation`，只看 eval case、baseline、rubric、regression、CI gate 能迁移到本项目的部分。
 
 晚上：
 
@@ -107,6 +108,8 @@
 - 面试时这个项目怎么讲才不像 Demo？
 - harness 和普通测试脚本的区别是什么？
 - 本周看的资料是否有明确优先级、章节、语言门槛和产出物？
+- 本周是否有 AI Builder 证据：代码/原型、测试/eval、AI 辅助开发复盘？
+- rohitg00 lesson 是否留下了运行输出摘要、代码结构理解、项目迁移点和面试表达？
 - 下周要补哪 3 个关键点？
 
 ## 本周复盘区
@@ -117,3 +120,4 @@
 - 简历新增表达：
 - 当前公司观察：
 - 资料学习产出：
+- AI Builder 产出：

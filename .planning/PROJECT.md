@@ -17,12 +17,15 @@
 - 已建立 `ai-fde-portfolio/` 作为 AI Harness / LLMOps 转型工作区，覆盖路线、项目、职业材料和面试表达。
 - 已形成 6 个月 AI Harness / LLMOps 转型路线，围绕 LLM Gateway、RAG 质量治理、Agent Harness、Harness 产品化后台、作品集和求职决策推进。
 - 已建立学习资料优先级规则：中文优先、短路径优先、作品集优先；资料必须明确具体章节、语言门槛、投入上限和产出物。
+- 已确认不把主定位改成纯“AI 全栈”，而是在 AI Evals & Harness 主线下新增 AI Builder / AI-assisted development 技术能力线。
+- 已将 rohitg00/ai-engineering-from-scratch 从 P3 参考库升级为 P1/P2 精选工程实践库，但限定只学 Phase 11/13/14/17 中服务 LLM Gateway、Eval Harness、Agent Harness、LLMOps 的部分。
 
 ### Active
 
 - [ ] 持续沉淀 AI Harness / AI Evals / LLMOps 质量治理学习资料，并把资料转化为项目、方案、复盘或面试表达。
 - [ ] 课程和仓库推荐必须先按 P0/P1/P2/P3/P4 排序，避免把平台总入口或大而全英文资料当成学习主线。
 - [ ] 按月推进 AI Evals & Harness 转型路线，优先产出可展示项目和作品集材料。
+- [ ] 按月推进 AI Builder 技术补强，确保每个项目同时有产品文档、可运行/可交互产物、测试/eval 和面试表达。
 - [ ] 建立学习效果评测机制，定期检查能力是否转化为简历、讲法、项目深度和岗位匹配度。
 - [ ] 围绕当前公司机会和未来求职，持续打磨 AI 平台产品、Eval Harness、Agent Harness、RAG 质量治理方向的竞争力证据。
 
@@ -35,12 +38,15 @@
 ## Context
 
 - 你希望从当前经验出发，优先提升 AI Harness / AI Evals / LLMOps 质量治理方向的产品竞争力。
+- 当前定位更新为：AI 平台产品经理 / AI Evals & Harness 产品方向，具备 AI Builder 能力。
 - 个人背景：重庆理工大学软件工程毕业，2023 年毕业，约 3 年开发经验，毕业一年后转产品经理；有带团队做外包项目、驻场开发、客户现场对接经验。
 - 现实约束：重庆本地发展为主，已买房有房贷，女朋友在重庆上班；当前在小公司做 AI 大模型中转平台产品经理，薪资 8500、到手约 7800、公积金双边 250、无年终且未涨薪。
 - 现有材料已经把重点放在大模型平台、LLMOps、Eval Harness、RAG 质量治理、Agent Harness 和行业场景落地上。
 - FDE 不再作为主攻 title，只保留为客户现场、交付、集成、需求抽象经验标签；纯驻场实施、客户成功、交付救火类岗位需要谨慎过滤。
 - 项目不是普通学习笔记库，而是职业成长资产库：路线、项目、复盘、简历、岗位分析和面试表达要互相连接。
 - 学习资料必须优先选择中文、低成本、短路径、能产出作品集材料的内容；英文资料如果没有明确中文入口或字幕，默认降级。
+- AI 开发技术路线只服务产品竞争力：用 AI 辅助开发完成产品原型、LLM 应用 Demo、Eval Harness 样例、RAG/Agent 质量治理工具，不转纯全栈工程师路线。
+- 英文工程资料可以作为例外纳入，但必须质量高、范围窄、能运行、能迁移到项目；rohitg00/ai-engineering-from-scratch 按 5 步学习法使用，不照抄全量代码。
 - 当前路径兼顾两类结果：在当前公司争取 AI 产品/方案相关机会，以及未来外部求职时拿出有说服力的作品集。
 
 ## Constraints
@@ -50,6 +56,7 @@
 - **产出导向**: 学习内容必须尽量转化为项目、方案、复盘、简历 bullet 或面试讲稿。
 - **资料边界**: 不推荐泛泛的平台入口；必须给出具体课程、章节、仓库用途、语言门槛、时间投入和验收产出。
 - **岗位导向**: 优先覆盖 AI Evals / Harness / LLMOps、大模型平台产品、RAG/Agent 平台产品等方向的高频能力。
+- **技术边界**: AI Builder 能力是加分层，不替代产品主线；避免把路线带偏成算法、模型训练、复杂全栈或纯工程师求职。
 - **可评测**: 每个阶段都需要有学习效果检查，避免只完成任务但无法证明能力提升。
 
 ## Key Decisions
@@ -61,6 +68,8 @@
 | 优先推进大模型平台、RAG 质量治理、Agent Harness 和行业场景项目 | 这些方向与现有经验、目标岗位和重庆本地制造业/政企数字化机会匹配度更高 | Pending |
 | 将 Harness/Evals/LLMOps 质量治理升为职业主线，FDE 降级为能力标签 | 用户对 Harness 更感兴趣，且认为本地 FDE 容易退化为驻场外包、实施救火和脏活累活 | Pending |
 | 建立学习资料优先级，避免资料过载 | 用户明确反馈课程平台和英文资料如果没有具体入口、字幕和优先级，会增加学习负担 | Pending |
+| 新增 AI Builder 技术能力线，但不改成 AI 全栈主定位 | 市场要求 AI PM 更懂技术、能用 AI 辅助开发，但“AI 全栈”多数仍是工程师 title，容易削弱产品差异化 | Pending |
+| 将 rohitg00/ai-engineering-from-scratch 升级为精选工程实践库 | 本地仓库内容新、结构稳定、质量较高，但体量过大，必须精选 Phase 11/13/14/17 并绑定项目产出 | Pending |
 
 ---
-*Last updated: 2026-05-27 after learning resource priority update*
+*Last updated: 2026-05-28 after rohitg00/ai-engineering-from-scratch study-plan update*

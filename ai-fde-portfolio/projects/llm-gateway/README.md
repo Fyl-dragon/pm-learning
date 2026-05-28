@@ -1,6 +1,6 @@
 # LLM Gateway / LLMOps Mini Platform
 
-这是 6 个月 AI Harness / LLMOps 转型计划的第一个主项目：大模型调用治理平台。
+这是 6 个月 AI Builder 型 AI Harness / LLMOps 转型计划的第一个主项目：大模型调用治理平台。
 
 它不是普通 API 中转 Demo，核心是把平台产品面试里最常被问到的能力做出来：
 
@@ -13,6 +13,7 @@
 - 调用日志、Token 与成本统计
 - 应用维度用量报表
 - Eval Harness V0：批量运行、trace、成本/耗时/fallback 指标、失败归因
+- AI Builder 证据：可运行代码、测试用例、README、AI 辅助开发复盘
 
 ## 快速运行核心逻辑
 
@@ -87,3 +88,4 @@ curl -X POST http://127.0.0.1:8010/v1/evaluations/run \
 3. 路由策略可以按成本、速度、健康状态做取舍；失败时 fallback 保证可用性。
 4. 预算和降级模型把产品商业化、客户套餐、毛利控制连起来。
 5. Eval Harness 让平台从“能跑一次”进入“可重复评测、可定位失败、可持续优化”。
+6. AI Builder 价值不是炫技，而是能把产品需求推进到可运行原型，再用测试、eval、trace 和指标证明质量。

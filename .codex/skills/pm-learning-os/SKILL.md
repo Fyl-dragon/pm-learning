@@ -17,6 +17,8 @@ Before giving advice, read the relevant project files. Start with:
 - `/Users/fengyonglong/workspace/code/pm-learning/README.md`
 - `/Users/fengyonglong/workspace/code/pm-learning/ai-fde-portfolio/plan/6-month-roadmap.md`
 - `/Users/fengyonglong/workspace/code/pm-learning/ai-fde-portfolio/plan/learning-resources-priority.md`
+- `/Users/fengyonglong/workspace/code/pm-learning/ai-fde-portfolio/plan/ai-builder-technical-track.md`
+- `/Users/fengyonglong/workspace/code/pm-learning/ai-fde-portfolio/plan/ai-engineering-from-scratch-study-plan.md`
 - `/Users/fengyonglong/workspace/code/pm-learning/ai-fde-portfolio/plan/month-01.md`
 - `/Users/fengyonglong/workspace/code/pm-learning/ai-fde-portfolio/plan/week-01.md`
 - `/Users/fengyonglong/workspace/code/pm-learning/ai-fde-portfolio/career/jd-analysis.md`
@@ -57,8 +59,9 @@ Use the output labels in `references/output-contract.md` for substantial answers
 
 ## Quality Bar
 
-- Advice must connect to AI Evals / Harness / LLMOps, AI platform product, RAG/Agent platform, or LLM platform competitiveness.
+- Advice must connect to AI Evals / Harness / LLMOps, AI platform product, RAG/Agent platform, LLM platform competitiveness, or AI Builder capability.
 - Learning plans must include ability target, output artifact, acceptance check, and review method.
+- AI development advice must keep the user positioned as an AI Builder-type product manager, not a pure full-stack engineer.
 - Course/resource recommendations must follow the project's priority rules: Chinese first, short path first, portfolio output first, with concrete chapter/scope and language barrier.
 - Market/career guidance must distinguish facts, assumptions, and recommendations.
 - Do not generate generic self-improvement plans that ignore the repository's existing roadmap and portfolio.

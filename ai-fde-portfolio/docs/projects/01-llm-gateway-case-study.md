@@ -6,6 +6,8 @@
 
 因此本项目将普通大模型中转能力升级为 LLM Gateway / LLMOps Mini Platform，并增加 Eval Harness V0，让平台具备可重复评测和失败归因能力。
 
+在职业表达上，这个项目也作为 AI Builder 证据：不是只写产品文档，而是能把需求推进到可运行代码、测试、eval、README 和面试复盘。
+
 ## 目标用户
 
 - 平台产品/运营：配置模型、应用、预算和路由策略。
@@ -37,6 +39,7 @@
 - QPS 限制：按应用统计近期调用
 - Eval Harness：批量运行 case、输出通过率、成本、耗时、fallback 次数、trace 和失败归因
 - 质量治理入口：为 RAG Evaluation Harness、Agent Harness、发布门禁和生产反馈回流预留结构
+- AI Builder 证据：保留代码、测试、配置、README 和后续 AI 辅助开发复盘
 
 ## 架构草图
 
@@ -65,6 +68,7 @@ flowchart LR
 - Prompt 变更追踪
 - Eval Harness：测试集、批量运行、trace、失败归因
 - 生产反馈回流：把 bad case、trace、成本和延迟问题转成后续评测集
+- AI Builder：用 AI 辅助开发推进小功能和测试，但用人工产品判断、测试/eval 和复盘控制质量
 
 ## 后续增强
 
@@ -76,3 +80,4 @@ flowchart LR
 - 将 Eval Harness 升级为 RAG Evaluation Harness。
 - 加入 Agent Harness：Tool registry、State、Guardrails、Trace、Recovery、Regression。
 - 做 Harness 产品化后台：评测集管理、运行记录、对比实验、人工标注、生产 trace 回流和发布门禁。
+- 增加 AI Builder 复盘模板，记录需求、AI 生成、人工审查、测试/eval 结果和产品价值。

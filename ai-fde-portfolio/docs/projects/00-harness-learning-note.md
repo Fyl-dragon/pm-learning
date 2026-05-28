@@ -10,7 +10,7 @@
 
 当前职业定位：
 
-> AI 平台产品经理 / AI Evals & Harness 产品方向。FDE 只作为客户现场、交付、集成、需求抽象经验标签，不作为主攻 title。
+> AI 平台产品经理 / AI Evals & Harness 产品方向，具备 AI Builder 能力。FDE 只作为客户现场、交付、集成、需求抽象经验标签，不作为主攻 title；AI 全栈也只作为技术能力标签，不作为主攻定位。
 
 ## 为什么值得加进准备计划
 
@@ -50,6 +50,11 @@ Harness 产品化：
 - 提供 AI Evals 后台能力。
 - 关注评测集管理、运行记录、对比实验、人工标注、生产 trace 回流、权限、报表和 CI gate。
 
+AI Builder：
+
+- 提供从需求到可运行/可交互产物的推进能力。
+- 关注 AI 辅助开发、API 原型、简单后台、测试/eval、debug、代码审查和技术复盘。
+
 ## 面试回答
 
 如果面试官问你最近比较火的 harness 怎么看，可以这样答：
@@ -60,12 +65,17 @@ Harness 产品化：
 
 > FDE 是真实趋势，但我不会把它作为主攻 title，因为它的含金量非常依赖公司和产品成熟度。在顶级 AI 公司里，FDE 可能是深度嵌入客户、重构工作流和推动生产落地；但在本地中小公司里，也可能退化成驻场实施、客户成功、交付救火和外包开发。我会把 FDE 当成能力标签，把客户现场经验转化为 Harness 产品能力：把 bad case、生产 trace、模型失败和成本问题转成评测集、回归测试、失败归因和发布门禁。
 
+如果面试官问是否要转 AI 全栈，可以这样答：
+
+> 我不会把自己定位成纯 AI 全栈工程师，而是 AI Builder 型 AI 平台产品经理。AI 产品确实越来越需要懂技术和能用 AI 辅助开发，但我的优势不是和全栈工程师拼工程深度，而是用产品判断定义问题，用 AI 辅助开发推进可运行原型，再用测试、eval、trace 和失败归因证明质量。
+
 ## 项目落点
 
 - 第 1 个月：LLM Gateway 增加 Eval Harness V0。
 - 第 2 个月：RAG 项目升级为 RAG Evaluation Harness & Knowledge Governance。
 - 第 3 个月：Agent Harness Layer，强调 trace、工具权限、状态、失败恢复和人工确认。
 - 第 4 个月：Harness 产品化后台，展示评测集管理、运行记录、对比实验、人工标注、生产 trace 回流和发布门禁。
+- 横向贯穿：AI Builder 技术线，每个项目都要留下代码/原型、测试/eval、AI 辅助开发复盘和面试表达。
 
 ## 参考资料
 
@@ -73,6 +83,11 @@ Harness 产品化：
 - Braintrust eval lifecycle：https://www.braintrust.dev/docs/evaluate
 - Langfuse LLM observability / evaluation docs：https://langfuse.com/docs
 - OpenAI Evals：https://github.com/openai/evals
+- Anthropic Claude Code PM：https://www.anthropic.com/careers/jobs/4985920008
+- Anthropic Claude Code teams use cases：https://www.anthropic.com/news/how-anthropic-teams-use-claude-code
+- Anthropic agentic coding guide：https://resources.anthropic.com/hubfs/Scaling%20agentic%20coding%20across%20your%20organization.pdf?hsLang=en
+- OpenAI API Agents PM：https://openai.com/careers/product-manager-api-agents-san-francisco/
+- OpenAI Applied Evals：https://openai.com/careers/software-engineer-applied-evals/
 - LLM Readiness Harness：https://arxiv.org/abs/2603.27355
 - AI Harness Engineering：https://arxiv.org/abs/2605.13357
 - OpenAI Deployment Company：https://openai.com/index/openai-launches-the-deployment-company/

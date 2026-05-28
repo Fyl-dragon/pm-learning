@@ -1,6 +1,6 @@
 ---
 name: pm-learning-market-research
-description: Project-local skill for current AI product manager job-market, interview, salary, company, and opportunity research for the pm-learning repository. Use when Codex needs to investigate AI Evals, Eval Harness, LLMOps, AI observability, LLM platform PM, RAG/Agent product, AI solution, FDE risk, or local Chongqing job requirements, identify market skill gaps, analyze JDs, compare role expectations, or source evidence for learning and career decisions.
+description: Project-local skill for current AI product manager job-market, interview, salary, company, and opportunity research for the pm-learning repository. Use when Codex needs to investigate AI Evals, Eval Harness, LLMOps, AI observability, AI Builder-type PM, LLM platform PM, RAG/Agent product, AI solution, FDE risk, or local Chongqing job requirements, identify market skill gaps, analyze JDs, compare role expectations, or source evidence for learning and career decisions.
 ---
 
 # PM Learning Market Research
@@ -24,7 +24,7 @@ Use `references/research-protocol.md` before producing a market snapshot.
 ## Research Workflow
 
 1. Read project goals and current resume/JD analysis.
-2. Define role scope: AI Evals / Harness, LLMOps, AI observability, LLM platform PM, RAG/Agent platform PM, AI solution, FDE risk, or local industry AI role.
+2. Define role scope: AI Evals / Harness, LLMOps, AI observability, AI Builder-type PM, LLM platform PM, RAG/Agent platform PM, AI solution, FDE risk, or local industry AI role.
 3. Gather current sources and record snapshot date.
 4. Extract repeated requirements: domain, AI systems, product methods, delivery, tools, language, salary, location.
 5. Compare requirements against the user's current assets.
@@ -35,6 +35,7 @@ Use `references/research-protocol.md` before producing a market snapshot.
 - Chongqing and nearby opportunities when location matters.
 - Remote or national roles only when they clarify skill requirements or offer realistic alternatives.
 - AI Evals / Harness, LLMOps, AI observability, LLM platform PM, RAG/Agent product roles.
+- AI Builder-type PM roles that require hands-on prototyping, coding tools, API understanding, tests, evals, or technical fluency.
 - AI solution and FDE only as filtered backup roles; exclude pure onsite implementation, customer success, delivery rescue, and presales support.
 
 ## Output Requirements

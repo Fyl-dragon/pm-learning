@@ -4,7 +4,7 @@
 
 | 日期 | 城市 | 公司/岗位 | 薪资 | 岗位方向 | 高频要求 | 我已具备 | 需要补 | 是否投递 | 备注 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 2026-05-25 | 重庆 | AI Evals / Harness / 大模型平台产品 | 12K-15K | AI 平台质量治理 | Eval Harness、RAG Evaluation、Agent trace、LLMOps、成本/稳定性治理 | 大模型平台、开发经验、现场交付、产品经验 | Harness 产品化作品集、RAG/Agent 评测项目 | 待定 | 样例行，替换成真实岗位 |
+| 2026-05-25 | 重庆 | AI Evals / Harness / 大模型平台产品 | 12K-15K | AI 平台质量治理 | Eval Harness、RAG Evaluation、Agent trace、LLMOps、成本/稳定性治理、AI 辅助开发 | 大模型平台、开发经验、现场交付、产品经验 | Harness 产品化作品集、RAG/Agent 评测项目、AI Builder 产出 | 待定 | 样例行，替换成真实岗位 |
 
 ## 高频能力归纳
 
@@ -15,6 +15,7 @@
 - RAG、Agent、工作流、工具调用
 - Eval Harness、RAG Evaluation Harness、Agent Harness、trace、回归测试、CI gate、失败归因
 - 日志、监控、评测、成本控制
+- AI 辅助开发、Python/FastAPI、API 原型、测试、debug、代码理解
 
 产品/方案：
 
@@ -42,6 +43,9 @@
 - Eval Harness
 - LLMOps
 - AI observability
+- AI Builder
+- AI-assisted development
+- 技术型 AI 产品经理
 - RAG evaluation
 - Agent platform
 - Agent trace
@@ -51,6 +55,7 @@
 谨慎筛选：
 
 - FDE
+- AI 全栈
 - AI 解决方案
 - AI 交付
 - 驻场 AI 工程师
@@ -62,3 +67,4 @@
 - 交付经理
 - 售前支持
 - 只写“懂大模型优先”但没有平台、评测、trace、治理能力的岗位
+- 以“AI 全栈”为名但本质是纯前后端开发、算法、模型训练或外包交付的岗位

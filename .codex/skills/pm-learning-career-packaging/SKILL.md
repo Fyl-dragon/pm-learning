@@ -1,6 +1,6 @@
 ---
 name: pm-learning-career-packaging
-description: Project-local skill for AI product manager career planning, resume packaging, portfolio storytelling, interview project preparation, and career asset conversion in the pm-learning repository. Use when Codex needs to turn learning outputs such as LLM Gateway, Eval Harness, RAG Evaluation Harness, Agent Harness, Harness productization, LLMOps quality governance, or industry AI scenarios into resume bullets, case studies, self-introductions, interview scripts, mock questions, or job-search positioning.
+description: Project-local skill for AI product manager career planning, resume packaging, portfolio storytelling, interview project preparation, and career asset conversion in the pm-learning repository. Use when Codex needs to turn learning outputs such as LLM Gateway, Eval Harness, RAG Evaluation Harness, Agent Harness, Harness productization, LLMOps quality governance, AI Builder / AI-assisted development, or industry AI scenarios into resume bullets, case studies, self-introductions, interview scripts, mock questions, or job-search positioning.
 ---
 
 # PM Learning Career Packaging
@@ -33,6 +33,7 @@ Before packaging, inspect:
 Prioritize these directions unless the user says otherwise:
 
 - AI platform PM / AI Evals & Harness product direction.
+- AI Builder-type AI product manager with runnable prototypes and tests/evals.
 - LLMOps quality governance product manager.
 - LLM platform product manager.
 - RAG/Agent platform product manager.

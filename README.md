@@ -13,11 +13,14 @@
 - 这是否提升了我的 AI 产品判断力？
 - 这是否能沉淀成简历、作品集或面试表达？
 - 这是否能让我更接近 AI Evals / Harness / LLMOps、大模型平台产品或 RAG/Agent 平台产品方向的岗位要求？
+- 这是否能提升我的 AI Builder 能力，把需求推进到可运行/可交互产物？
 
 ## 项目结构
 
 - `ai-fde-portfolio/`：AI 平台产品、AI Evals / Harness、RAG/Agent 质量治理方向的作品集与学习执行区。
 - `ai-fde-portfolio/plan/`：6 个月成长路线、月计划和周计划。
+- `ai-fde-portfolio/plan/ai-builder-technical-track.md`：AI Builder 技术能力线，约束技术学习只服务产品竞争力。
+- `ai-fde-portfolio/plan/ai-engineering-from-scratch-study-plan.md`：rohitg00/ai-engineering-from-scratch 精选学习协议，约束只学与 Harness / AI Builder 直接相关的部分。
 - `ai-fde-portfolio/projects/`：可展示、可复盘、可面试讲解的项目成果。
 - `ai-fde-portfolio/docs/projects/`：项目复盘、方案文档和产品化表达。
 - `ai-fde-portfolio/career/`：简历、岗位分析和面试讲稿。
@@ -30,6 +33,7 @@
 - 大模型平台产品能力：模型接入、路由、成本、日志、稳定性、权限和商业化治理。
 - AI 质量治理能力：Eval Harness、RAG 评测、Agent Harness、trace、回归测试、CI gate、发布门禁和失败归因。
 - 方案与交付能力：客户需求抽象、行业场景拆解、方案设计、实施计划和风险管理，作为 Harness 产品理解企业现场问题的补充能力。
+- AI Builder 能力：用 AI 辅助开发完成产品原型、LLM 应用 Demo、Eval Harness 样例和 RAG/Agent 质量治理工具。
 - 职场表达能力：简历 bullet、项目复盘、2 分钟自我介绍、5/8/15 分钟项目讲法。
 - 学习资料治理：中文优先、短路径优先、作品集优先；资料必须明确优先级、具体章节、语言门槛和产出物。
 
@@ -37,6 +41,7 @@
 
 - 少做散乱笔记，多做可交付成果。
 - 少追热点名词，多沉淀可解释、可复用、可面试讲清楚的项目。
+- 少喊“AI 全栈”口号，多做能被测试、eval、trace 证明质量的 AI Builder 产物。
 - 少收藏泛平台入口，多使用 `ai-fde-portfolio/plan/learning-resources-priority.md` 中已排序的具体资料。
 - 每周至少留下一个能证明能力提升的产物。
 - 每个项目都要同时服务学习、作品集、简历和面试表达。
