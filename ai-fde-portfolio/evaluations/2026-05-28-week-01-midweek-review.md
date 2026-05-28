@@ -55,6 +55,7 @@ LLM Gateway / LLMOps Mini Platform 已经具备作品集雏形：
 - 已新增 `career/portfolio-evidence-matrix.md`，把目标能力、市场证据、项目资产、简历/面试用法和证据缺口串起来。
 - 已新增 `projects/llm-gateway/config/eval_policy.json` 并接入 Eval Harness 输出，支持 `gate.decision` 的 `allow` / `review` / `block` 判断。
 - 已新增 `docs/projects/06-llm-gateway-eval-gate-report.md`，用 before/after 样例展示基线 `allow` 和质量回归 `block`。
+- 已新增 `projects/llm-gateway/scripts/run_eval_gate.py`，用退出码模拟本地 CI gate：`allow=0`、`block=1`、`review=2`。
 - 样本仍然有限，后续需要每周继续补 5 个真实 JD。
 
 ## 下周前三件事

@@ -125,6 +125,37 @@ class GatewayCoreTest(unittest.TestCase):
         self.assertEqual(result["results"][0]["passed"], True)
         self.assertEqual(result["results"][0]["failure_tag"], "none")
 
+    def test_eval_gate_marks_soft_threshold_as_review(self):
+        db = GatewayDatabase(":memory:")
+        try:
+            service = GatewayService(
+                db,
+                eval_policy={
+                    "policy_id": "test-review-policy",
+                    "thresholds": {
+                        "min_pass_rate": 1.0,
+                        "max_avg_cost_usd": 1,
+                        "max_avg_latency_ms": 1,
+                        "max_fallback_count": 1,
+                        "blocked_failure_tags": [],
+                    },
+                },
+            )
+            result = service.evaluate(
+                "app-sales-copilot",
+                [
+                    {
+                        "id": "case-review",
+                        "prompt": "客户需要 AI 方案。",
+                        "expected_keywords": ["业务目标", "技术链路"],
+                    }
+                ],
+            )
+            self.assertEqual(result["summary"]["pass_rate"], 1.0)
+            self.assertEqual(result["gate"]["decision"], "review")
+        finally:
+            db.close()
+
 
 if __name__ == "__main__":
     unittest.main()
