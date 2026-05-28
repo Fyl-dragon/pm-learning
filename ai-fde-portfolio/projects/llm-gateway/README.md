@@ -144,6 +144,15 @@ python3 scripts/run_eval_gate.py --request examples/evaluation_regression_reques
 | `block` | `1` | 存在质量或关键环境失败，阻断发布 |
 | `review` | `2` | 质量通过但成本、延迟或 fallback 超阈值，需要人工复核 |
 
+## GitHub Actions Gate
+
+仓库已包含 `.github/workflows/llm-gateway-eval-gate.yml`。当 LLM Gateway 项目或工作流本身发生变化时，它会执行：
+
+- 单元测试。
+- eval request / regression request / eval policy JSON 校验。
+- 正常 release gate，要求返回 `allow` 和退出码 `0`。
+- 回归样例 gate，要求返回 `block` 和退出码 `1`。
+
 失败归因标签：
 
 - `quality_failure`：内容未满足期望关键词。

@@ -19,6 +19,10 @@
 - `python3 scripts/run_eval_gate.py --request examples/evaluation_request.json`
 - `python3 scripts/run_eval_gate.py --request examples/evaluation_regression_request.json --no-fail`
 
+GitHub Actions：
+
+- `.github/workflows/llm-gateway-eval-gate.yml`
+
 CI 行为：
 
 - `allow` 返回退出码 0。
@@ -132,5 +136,5 @@ CI 行为：
 
 - 增加历史报告目录，保存每次评测输出。
 - 增加 before/after 对比脚本，自动生成 Markdown 报告。
-- 增加 GitHub Actions 或其他 CI 执行记录，模拟 Prompt 或路由策略变更前的发布检查。
+- 保留 GitHub Actions 执行记录，作为作品集里的工程化证据。
 - 把生产 trace 和 bad case 回流到 `evaluation_request.json`。

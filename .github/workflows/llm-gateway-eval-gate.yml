@@ -1,0 +1,51 @@
+name: LLM Gateway Eval Gate
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "ai-fde-portfolio/projects/llm-gateway/**"
+      - ".github/workflows/llm-gateway-eval-gate.yml"
+  pull_request:
+    paths:
+      - "ai-fde-portfolio/projects/llm-gateway/**"
+      - ".github/workflows/llm-gateway-eval-gate.yml"
+  workflow_dispatch:
+
+jobs:
+  eval-gate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ai-fde-portfolio/projects/llm-gateway
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run unit tests
+        run: python3 -m unittest discover -s tests
+
+      - name: Validate eval request JSON
+        run: |
+          python3 -m json.tool examples/evaluation_request.json > /tmp/evaluation_request.json
+          python3 -m json.tool examples/evaluation_regression_request.json > /tmp/evaluation_regression_request.json
+          python3 -m json.tool config/eval_policy.json > /tmp/eval_policy.json
+
+      - name: Run release gate
+        run: python3 scripts/run_eval_gate.py --request examples/evaluation_request.json
+
+      - name: Verify regression sample blocks release
+        run: |
+          set +e
+          python3 scripts/run_eval_gate.py --request examples/evaluation_regression_request.json > /tmp/regression_gate.json
+          status=$?
+          set -e
+          cat /tmp/regression_gate.json
+          test "$status" -eq 1
